@@ -22,6 +22,12 @@ document.addEventListener("DOMContentLoaded", () => {
     todoInput.value = "";
   });
 
+  todoInput.addEventListener("keypress", (event) => {
+    if (event.key === "Enter") {
+      addTaskButton.click();
+    }
+  });
+
   function renderTasks(task) {
     const li = document.createElement("li");
     li.setAttribute("data-id", task.id);
